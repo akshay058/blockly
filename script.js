@@ -2,97 +2,157 @@ var toolbox = {
   kind: "categoryToolbox",
   contents: [
     {
-      kind: "category",
+      kind: "CATEGORY",
       name: "Logic",
-      categorystyle: "logic_category",
+      colour: "%{BKY_LOGIC_HUE}",
       contents: [
         {
-          kind: "block",
+          kind: "BLOCK",
           type: "controls_if",
         },
         {
-          kind: "block",
+          kind: "BLOCK",
           type: "logic_compare",
         },
         {
-          kind: "block",
+          kind: "BLOCK",
           type: "logic_operation",
         },
         {
-          kind: "block",
+          kind: "BLOCK",
           type: "logic_negate",
         },
         {
-          kind: "block",
+          kind: "BLOCK",
           type: "logic_boolean",
         },
       ],
     },
     {
-      kind: "category",
+      kind: "CATEGORY",
       name: "Loops",
-      categorystyle: "loop_category",
+      colour: "%{BKY_LOOPS_HUE}",
       contents: [
         {
-          kind: "block",
+          kind: "BLOCK",
           type: "controls_repeat_ext",
           inputs: {
             TIMES: {
-              block: {
+              shadow: {
                 type: "math_number",
-                fields: {
-                  NUM: 10,
-                },
+                fields: { NUM: 10 },
               },
             },
           },
         },
         {
-          kind: "block",
+          kind: "BLOCK",
           type: "controls_whileUntil",
         },
       ],
     },
     {
-      kind: "category",
+      kind: "CATEGORY",
       name: "Math",
-      categorystyle: "math_category",
+      colour: "%{BKY_MATH_HUE}",
       contents: [
         {
-          kind: "block",
+          kind: "BLOCK",
           type: "math_number",
-          fields: {
-            NUM: 123,
+        },
+        {
+          kind: "BLOCK",
+          type: "math_arithmetic",
+          inputs: {
+            A: {
+              shadow: {
+                type: "math_number",
+                fields: { NUM: 1 },
+              },
+            },
+            B: {
+              shadow: {
+                type: "math_number",
+                fields: { NUM: 1 },
+              },
+            },
           },
         },
         {
-          kind: "block",
-          type: "math_arithmetic",
-        },
-        {
-          kind: "block",
+          kind: "BLOCK",
           type: "math_single",
+          inputs: {
+            NUM: {
+              shadow: {
+                type: "math_number",
+                fields: { NUM: 9 },
+              },
+            },
+          },
         },
       ],
     },
     {
-      kind: "category",
+      kind: "CATEGORY",
       name: "Text",
-      categorystyle: "text_category",
+      colour: "%{BKY_TEXTS_HUE}",
       contents: [
         {
-          kind: "block",
+          kind: "BLOCK",
           type: "text",
         },
         {
-          kind: "block",
+          kind: "BLOCK",
           type: "text_length",
+          inputs: {
+            VALUE: {
+              shadow: {
+                type: "text",
+                fields: { TEXT: "abc" },
+              },
+            },
+          },
         },
         {
-          kind: "block",
+          kind: "BLOCK",
           type: "text_print",
+          inputs: {
+            TEXT: {
+              shadow: {
+                type: "text",
+                fields: { TEXT: "abc" },
+              },
+            },
+          },
+        },
+        {
+          kind: "BLOCK",
+          type: "text_prompt_ext",
+          inputs: {
+            TEXT: {
+              shadow: {
+                type: "text",
+                fields: { TEXT: "abc" },
+              },
+            },
+          },
         },
       ],
+    },
+    {
+      kind: "SEP",
+    },
+    {
+      kind: "CATEGORY",
+      name: "Variables",
+      custom: "VARIABLE",
+      colour: "%{BKY_VARIABLES_HUE}",
+    },
+    {
+      kind: "CATEGORY",
+      name: "Functions",
+      custom: "PROCEDURE",
+      colour: "%{BKY_PROCEDURES_HUE}",
     },
   ],
 };
