@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
+  <head>
     <meta charset="utf-8" />
     <title>Aebocode Project</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
 
     <script src="./node_modules/blockly/blockly_compressed.js"></script>
     <script src="./node_modules/blockly/blocks_compressed.js"></script>
     <script src="./node_modules/blockly/javascript_compressed.js"></script>
     <script src="./node_modules/blockly/msg/en.js"></script>
-
   </head>
   <body>
-    <p>
-      Demo Created by Akshay Jain for AeboCode
-    </p>
+    <h3 >
+      BLOCKLY <pre>Created by Akshay Jain for AeboCode</pre>
+    </h3>
 
     <p>
-     
+      <button id="runcode" onclick="runCode()">
+        <img src="./aebocode.png" alt="aebocode"/>
+        Run JavaScript
+      </button>
     </p>
 
 
@@ -25,13 +28,9 @@
       <div id="text"
         disabled="disabled"
       >
-        <div id="text1" style="display: flex; justify-content: space-between; text-align: center; height: 40px;"
+        <div id="text1"
         >
-          <div  style="margin-top: 10px;">JavaScript</div>
-          <div > <button id="runcode" style="height:30px; width: 150px; margin-top: 10px; margin-left: -20px;" onclick="runCode()">
-        <img src="./aebocode.png" alt="aebocode"/>
-        Run JavaScript
-      </button></div>
+          JavaScript Code
         </div>
         <hr></hr>
         

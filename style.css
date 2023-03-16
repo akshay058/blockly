@@ -10,17 +10,19 @@ h1 {
   display: inline-block;
   height: 30px;
   width: 10%;
-  margin-left: 85%;
+  margin-left: 80%;
   background-color: rgb(240, 246, 244);
 }
 #container {
-  width: 100%;
+  width: 80%;
   display: flex;
+  margin-left: 10%;
 }
 
 #blocklyDiv {
   height: 480px;
   width: 58%;
+  border: 8px solid rgb(34, 176, 228);
 }
 
 #text {
@@ -28,6 +30,7 @@ h1 {
   width: 40%;
   background-color: rgb(252, 249, 249);
   color: #0e0eab;
+  border: 8px solid rgb(34, 176, 228);
 }
 
 #text1 {
@@ -37,6 +40,7 @@ h1 {
   display: inline-block;
   font-weight: bold;
   margin-left: 20px;
+  margin-top: 10px;
 }
 #output {
   margin-left: 20px;
@@ -44,4 +48,8 @@ h1 {
 img {
   height: 20px;
   width: 30px;
+}
+h3 {
+  color: #77460a;
+  text-align: center;
 }
