@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8" />
+    <title>Aebocode Project</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="./node_modules/blockly/blockly_compressed.js"></script>
+    <script src="./node_modules/blockly/blocks_compressed.js"></script>
+    <script src="./node_modules/blockly/javascript_compressed.js"></script>
+    <script src="./node_modules/blockly/msg/en.js"></script>
+
+  </head>
+  <body>
+    <p>
+      Demo Created by Akshay Jain for AeboCode
+    </p>
+
+    <p>
+      <button id="runcode" onclick="runCode()">
+        <img src="./aebocode.png" alt="aebocode"/>
+        Run JavaScript
+      </button>
+    </p>
+
+
+    <div id="container" >
+      <div id="blocklyDiv"></div>
+      <div id="text"
+        disabled="disabled"
+      >
+        <p id="text1"
+        >
+          JavaScript
+        </p>
+        <hr></hr>
+        
+          <p id="output" ></p>
+
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
