@@ -1,230 +1,43 @@
+<!DOCTYPE html>
 <html>
-  <head> </head>
-  <body>
-    <p>
-      <button onclick="showCode()">Show JavaScript</button>
-      <button onclick="runCode()">Run JavaScript</button>
-    </p>
-    <!-- 
-    <div id="blocklyDiv" style="height: 480px; width: 600px"></div>
-    <div id="code">hello</div> -->
-    <div style="width: 100%">
-      <div
-        id="blocklyDiv"
-        style="display: inline-block; height: 480px; width: 58%"
-      ></div>
-      <textarea
-        id="output"
-        disabled="disabled"
-        style="display: inline-block; height: 480px; width: 38%"
-      >
-      </textarea>
-    </div>
-
-    <!-- <script src="https://unpkg.com/blockly/blockly.min.js"></script> -->
+  <head>
+    <meta charset="utf-8" />
+    <title>Aebocode Project</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
 
     <script src="./node_modules/blockly/blockly_compressed.js"></script>
     <script src="./node_modules/blockly/blocks_compressed.js"></script>
-
     <script src="./node_modules/blockly/javascript_compressed.js"></script>
-
     <script src="./node_modules/blockly/msg/en.js"></script>
-    <script src="blockly_compressed.js"></script>
-    <script src="javascript_compressed.js"></script>
-    <script src="python_compressed.js"></script>
-    <script src="php_compressed.js"></script>
-    <script src="lua_compressed.js"></script>
-    <script src="dart_compressed.js"></script>
-    <script src="./index.js"></script>
+  </head>
+  <body>
+    <h3 >
+      BLOCKLY <pre>Created by Akshay Jain for AeboCode</pre>
+    </h3>
 
-    <script>
-      const toolbox = {
-        kind: "categoryToolbox",
-        contents: [
-          {
-            kind: "category",
-            name: "Core",
-            contents: [
-              {
-                kind: "block",
-                type: "controls_if",
-              },
-              {
-                kind: "block",
-                type: "logic_compare",
-              },
-            ],
-          },
-          {
-            kind: "category",
-            name: "Custom",
-            contents: [
-              {
-                kind: "block",
-                type: "start",
-              },
-              {
-                kind: "category",
-                name: "Move",
-                contents: [
-                  {
-                    kind: "block",
-                    type: "move_forward",
-                  },
-                ],
-              },
-              {
-                kind: "category",
-                name: "Turn",
-                contents: [
-                  {
-                    kind: "block",
-                    type: "turn_left",
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      };
-      //   {
-      //     kind: "flyoutToolbox",
-      //     contents: [
-      //       { kind: "block", type: "controls_if" },
-      //       { kind: "block", type: "controls_repeat_ext" },
-      //       { kind: "block", type: "logic_compare" },
-      //       { kind: "block", type: "math_number" },
-      //       { kind: "block", type: "math_arithmetic" },
-      //       { kind: "block", type: "text" },
-      //       { kind: "block", type: "text_print" },
-      //     ],
-      //   };
-      const demoWorkspace = Blockly.inject("blocklyDiv", {
-        toolbox: toolbox,
-        move: {
-          scrollbars: {
-            horizontal: true,
-            vertical: true,
-          },
-          drag: true,
-          wheel: false,
-        },
-      });
-      //   var startBlocks = {
-      //     blocks: {
-      //       languageVersion: 0,
-      //       blocks: [
-      //         {
-      //           type: "controls_if",
-      //           inline: false,
-      //           extraState: {
-      //             hasElse: true,
-      //           },
-      //           inputs: {
-      //             IF0: {
-      //               block: {
-      //                 type: "logic_compare",
-      //                 fields: {
-      //                   OP: "EQ",
-      //                 },
-      //                 inputs: {
-      //                   A: {
-      //                     block: {
-      //                       type: "math_arithmetic",
-      //                       fields: {
-      //                         OP: "MULTIPLY",
-      //                       },
-      //                       inputs: {
-      //                         A: {
-      //                           block: {
-      //                             type: "math_number",
-      //                             fields: {
-      //                               NUM: 6,
-      //                             },
-      //                           },
-      //                         },
-      //                         B: {
-      //                           block: {
-      //                             type: "math_number",
-      //                             fields: {
-      //                               NUM: 7,
-      //                             },
-      //                           },
-      //                         },
-      //                       },
-      //                     },
-      //                   },
-      //                   B: {
-      //                     block: {
-      //                       type: "math_number",
-      //                       fields: {
-      //                         NUM: 42,
-      //                       },
-      //                     },
-      //                   },
-      //                 },
-      //               },
-      //             },
-      //             DO0: {
-      //               block: {
-      //                 type: "text_print",
-      //                 inline: false,
-      //                 inputs: {
-      //                   TEXT: {
-      //                     block: {
-      //                       type: "text",
-      //                       fields: {
-      //                         TEXT: "Don't panic",
-      //                       },
-      //                     },
-      //                   },
-      //                 },
-      //               },
-      //             },
-      //             ELSE: {
-      //               block: {
-      //                 type: "text_print",
-      //                 inline: false,
-      //                 inputs: {
-      //                   TEXT: {
-      //                     block: {
-      //                       type: "text",
-      //                       fields: {
-      //                         TEXT: "Panic",
-      //                       },
-      //                     },
-      //                   },
-      //                 },
-      //               },
-      //             },
-      //           },
-      //         },
-      //       ],
-      //     },
-      //   };
-      Blockly.serialization.workspaces.load(demoWorkspace);
+    <p>
+      <button id="runcode" onclick="runCode()">
+        <img src="./aebocode.png" alt="aebocode"/>
+        Run JavaScript
+      </button>
+    </p>
 
-      function showCode() {
-        // Generate JavaScript code and display it.
-        // Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
-        var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
-        // alert(code);
-        document.getElementById("output").innerHTML = code;
-      }
 
-      function runCode() {
-        // Generate JavaScript code and run it.
-        // window.LoopTrap = 1000;
-        // Blockly.JavaScript.INFINITE_LOOP_TRAP =
-        //   'if (--window.LoopTrap < 0) throw "Infinite loop.";\n';
-        var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
-        // Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
-        try {
-          eval(code);
-        } catch (e) {
-          alert(e);
-        }
-      }
-    </script>
+    <div id="container" >
+      <div id="blocklyDiv"></div>
+      <div id="text"
+        disabled="disabled">
+        <div id="text1"
+        >
+          JavaScript Code
+        </div>
+        <hr></hr>
+        
+          <p id="output" ></p>
+
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
   </body>
 </html>
